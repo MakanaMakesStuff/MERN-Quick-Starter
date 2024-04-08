@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Node",
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "rootDir": ".",
+    "strict": true,
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "paths": {
+      "@app/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "./src/**/*.tsx",
+    "./src/**/*.ts",
+    "src/client/custom.d.ts",
+    "env.d.ts"
+  ]
+}
