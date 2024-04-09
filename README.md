@@ -29,7 +29,7 @@ export default function Home() {
 
 In this example I imported the axios instance `api` and logged the response of the endpoint at `/`.
 
-Ideally this functionality will be handled by a custom api plugin(in the client folder) that makes the connection process more streamlined. i.e:
+Ideally this functionality will be handled by a custom api plugin(in the client folder) that makes the query process more streamlined. i.e:
 
 ```typescript
 // File location: src/client/includes/store.ts
