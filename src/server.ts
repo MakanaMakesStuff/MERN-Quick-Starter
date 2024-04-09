@@ -1,14 +1,21 @@
 import * as express from "express"
 import * as cors from "cors"
-import { registerRoutes } from "./server/index"
 import * as dotenv from "dotenv"
-dotenv.config()
+import { registerAuthMiddleware } from "./server/middleware/auth"
+import routers from "./server/routes"
+import * as path from "path"
+dotenv.config({ path: path.resolve(__dirname, "../.env.local") })
 
 const app = express()
 
+app.use(express.json())
 app.use(cors())
 
-registerRoutes(app)
+app.use((req, res, next) =>
+  registerAuthMiddleware(req, res, next, ["/api/auth/login"])
+)
+
+app.use(routers)
 
 app.listen(process.env.BACKEND_PORT || 8080, () => {
   console.log(

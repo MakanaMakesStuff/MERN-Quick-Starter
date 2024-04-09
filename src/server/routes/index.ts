@@ -1,7 +1,7 @@
-import { Express } from "express"
+// import all your routes here for a final conglomerate export
+import { router as index } from "./api"
+import { router as auth } from "./api/auth"
 
-export function handler(app: Express) {
-  return app.get("/", (req, res) => {
-    res.send("API connected successfully!")
-  })
-}
+const routers = [index, auth]
+
+export default routers
